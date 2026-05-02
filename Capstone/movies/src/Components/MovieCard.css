@@ -1,0 +1,118 @@
+.movie-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+}
+
+.movie-card:hover,
+.movie-card:focus {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 16px 40px var(--shadow);
+  border-color: var(--accent);
+}
+
+.card-poster {
+  position: relative;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: var(--skeleton-bg);
+}
+
+.card-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.movie-card:hover .card-poster img {
+  transform: scale(1.06);
+}
+
+.no-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 0.5rem;
+  font-size: 2.5rem;
+  color: var(--muted);
+}
+
+.no-poster span {
+  font-size: 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.card-rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  backdrop-filter: blur(8px);
+}
+
+.rating-high { background: rgba(34, 197, 94, 0.85); color: #fff; }
+.rating-mid  { background: rgba(234, 179, 8, 0.85);  color: #fff; }
+.rating-low  { background: rgba(239, 68, 68, 0.85);  color: #fff; }
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-card:hover .card-overlay,
+.movie-card:focus .card-overlay {
+  opacity: 1;
+}
+
+.view-details {
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 1.2rem;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  border-radius: 999px;
+}
+
+.card-info {
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.card-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.card-year {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
